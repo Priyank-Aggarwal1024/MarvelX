@@ -572,7 +572,7 @@ function WalletView({ wallet, setWallet, setSeedPhrase, selectedChain, password,
                   tab === 5 ? <TransactionHistory wallet={wallet} selectedChain={selectedChain} /> :
                     tab === 3 ? <SwapTab wallet={wallet} tokens={tokens} balance={balance} selectedChain={selectedChain} getAccountTokens={getAccountTokens} filterModal={filterModal} setFilterModal={setFilterModal} /> :
                       tab === 6 ? <ReceiveTab wallet={wallet} /> :
-                        tab === 7 && <AssetDetail token={token} wallet={wallet} selectedChain={selectedChain} />
+                        tab === 7 && <AssetDetail setTab={setTab} token={token} wallet={wallet} selectedChain={selectedChain} />
               }
             </div>
           </div>

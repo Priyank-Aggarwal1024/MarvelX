@@ -68,6 +68,7 @@ function SwapTab({ wallet, tokens, balance, getAccountTokens, selectedChain, fil
           );
           setFinalSwapAmount(response.data.outAmount / Math.pow(10, toToken.decimals))
           setSwapQuote(response.data);
+          console.log(response.data)
           setConversionString("1 " + swapFromToken + " ~ " + swapToToken + ": " + ((response.data.outAmount / Math.pow(10, toToken.decimals)) / swapAmount).toFixed(2))
         } catch (error) {
           console.error("Error fetching swap quote:", error);
@@ -308,7 +309,7 @@ function SwapTab({ wallet, tokens, balance, getAccountTokens, selectedChain, fil
       <div className="py-[15px] px-[10px] flex flex-col w-full gap-[11px] bg-[#080808] rounded-[8px] mt-[10px] relative" >
         <img src={swap2} alt="Swap" className="absolute z-[2] left-[50%] -top-[20px] translate-x-[-50%]" />
         <div className="text-[#474747] text-[13px] font-normal font-urbanist text-start">Destination</div>
-        <div className="swapContainer" style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+        <div className="swapContainer justify-between" style={{ display: "flex", alignItems: "center", gap: "20px" }}>
           <ConfigProvider
             theme={{
               token: {
@@ -347,7 +348,7 @@ function SwapTab({ wallet, tokens, balance, getAccountTokens, selectedChain, fil
           </ConfigProvider>
           <div className="w-[50%]">
             {swapQuote && (
-              <div className="quoteInfo">
+              <div className="quoteInfo justify-end flex items-center">
                 <p
                   style={{
                     borderRadius: "10px",
@@ -357,10 +358,8 @@ function SwapTab({ wallet, tokens, balance, getAccountTokens, selectedChain, fil
                     display: "flex",
                     alignItems: "center",
                     padding: "0 10px",
-                    width: "40%",
-                    marginTop: "40px",
-                    marginLeft: "100px"
                   }}
+                  className="text-end w-fit justify-end"
                 >
                   {finalSwapAmount}
                 </p>
@@ -386,6 +385,24 @@ function SwapTab({ wallet, tokens, balance, getAccountTokens, selectedChain, fil
       {swapQuote && (
         <div className="quoteInfo">
           <p>Price impact: {swapQuote.priceImpactPct}%</p>
+          <div className="py-[13px] px-[8px] flex flex-col w-full gap-[21px] bg-[#080808] rounded-[8px] mt-[10px] relative" >
+            <div className="flex w-full justify-between items-center">
+              <div className="text-[#474747] text-[13px] font-normal font-['SF Pro Display'] leading-[18.34px]">Price Impact</div>
+              <div className="text-right text-white text-[13px] font-normal font-['SF Pro Display'] leading-[18.34px]"> {swapQuote.priceImpactPct}%</div>
+            </div>
+            <div className="flex w-full justify-between items-center">
+              <div className="text-[#474747] text-[13px] font-normal font-['SF Pro Display'] leading-[18.34px]">Blockchain fee</div>
+              <div className="text-right text-white text-[13px] font-normal font-['SF Pro Display'] leading-[18.34px]">0.0000015 SOL</div>
+            </div>
+            <div className="flex w-full justify-between items-center">
+              <div className="text-[#474747] text-[13px] font-normal font-['SF Pro Display'] leading-[18.34px]">Provider Fee</div>
+              <div className="text-right text-white text-[13px] font-normal font-['SF Pro Display'] leading-[18.34px]">0.00001 SOL</div>
+            </div>
+            <div className="flex w-full justify-between items-center">
+              <div className="text-[#474747] text-[13px] font-normal font-['SF Pro Display'] leading-[18.34px]">Route</div>
+              <div className="text-right text-white text-[13px] font-normal font-['SF Pro Display'] leading-[18.34px]">SOL &gt; USDT</div>
+            </div>
+          </div>
           <button
             className="frontPageButton1 mb-8"
             style={{ width: "100%", marginTop: "20px" }}
