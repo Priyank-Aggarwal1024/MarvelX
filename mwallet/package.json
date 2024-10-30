@@ -1,0 +1,77 @@
+{
+  "name": "mwallet",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^5.0.1",
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@solana/spl-token": "^0.4.8",
+    "@solana/web3.js": "^1.95.3",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "antd": "^5.4.1",
+    "assert": "^2.1.0",
+    "axios": "^1.3.5",
+    "bip39": "^3.1.0",
+    "browserify-zlib": "^0.2.0",
+    "customize-cra": "^1.0.0",
+    "dot": "^1.1.3",
+    "dotenv": "^16.4.5",
+    "ed25519-hd-key": "^1.3.0",
+    "env": "^0.0.2",
+    "ethers": "^6.3.0",
+    "fontawesome": "^5.6.3",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
+    "process": "^0.11.10",
+    "promise-retry": "^2.0.1",
+    "qrcode.react": "^4.0.1",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.4",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0",
+    "react-scripts": "5.0.1",
+    "react-select": "^5.8.1",
+    "speakeasy": "^2.0.0",
+    "stream-http": "^3.2.0",
+    "url": "^0.11.4",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "path-browserify": "^1.0.1",
+    "postcss": "^8.4.47",
+    "react-app-rewired": "^2.2.1",
+    "stream-browserify": "^3.0.0",
+    "tailwindcss": "^3.4.12"
+  }
+}
